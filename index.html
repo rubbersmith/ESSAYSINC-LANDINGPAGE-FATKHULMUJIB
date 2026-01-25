@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Clothing | Minimalist Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal.hidden { opacity: 0; visibility: hidden; display: flex !important; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Animasi Cart Slide */
+        #cartDrawer { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cart-closed { transform: translateX(100%); }
+
+        /* Style Teks Berjalan */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-[#f9f9f9] text-[#1a1a1a] overflow-x-hidden">
+
+    <nav class="grid grid-cols-3 items-center px-8 py-4 md:px-20 bg-white border-b border-gray-100 sticky top-0 z-50">
+        <ul class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest">
+            <li onclick="toggleAccessories()" class="hover:opacity-50 cursor-pointer transition">Accessories</li>
+            <li onclick="toggleCollection()" class="hover:opacity-50 cursor-pointer transition">Apparel</li>
+        </ul>
+
+        <div class="flex justify-center">
+            <div onclick="toggleShopAll()" class="cursor-pointer hover:opacity-70 transition">
+                <img src="ESSAYS REBRAND.png" alt="Essaysinc Logo" class="h-8 md:h-12 w-auto object-contain">
+            </div>
+        </div>
+
+        <div class="flex justify-end gap-10 items-center text-xs font-bold uppercase tracking-widest">
+            <span onclick="toggleModal()" class="hidden md:block hover:opacity-50 cursor-pointer transition">Contact Info</span>
+            <div onclick="toggleCart()" class="border-b border-black cursor-pointer pb-0.5 transition-all hover:border-gray-400 font-bold">Cart (2)</div>
+        </div>
+    </nav>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING - WORLDWIDE SHIPPING 
+        </div>
+    </div>
+
+    <section class="relative flex flex-col items-center justify-center min-h-[90vh] px-6 text-center overflow-hidden">
+        <div class="absolute inset-0 z-0 px-4 md:px-20 py-10">
+            <img src="2.jpg" alt="Article Feature" class="w-full h-full object-cover rounded-sm shadow-2xl">
+        </div>
+        <div class="relative z-10 text-white drop-shadow-lg flex flex-col items-center">
+            <span class="text-xs uppercase tracking-[0.4em] mb-6 block font-bold">YOUR INSPIRATION</span>
+            <button onclick="toggleShopAll()" class="inline-block bg-white text-black px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition duration-500 shadow-lg mt-4">
+                SHOP NOW
+            </button>
+        </div>
+    </section>
+
+    <div id="shopAllModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
+            <button onclick="toggleShopAll()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6 text-center">Full Collection</h4>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE YELLOW</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="4.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">WEARWOOD</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRIANGLE</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 120.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="10.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN BLACK</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN WHITE</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER LOGO</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 90.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER YI</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 90.000</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="collectionModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
+            <button onclick="toggleCollection()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Apparel Collection</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE YELLOW</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="4.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">WEARWOOD</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRIANGLE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 120.000</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accessoriesModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
+            <button onclick="toggleAccessories()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Accessories Collection</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="10.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN BLACK</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER LOGO</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER YI</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-6">
+        <div class="bg-white w-full max-w-sm p-10 rounded-sm shadow-2xl relative text-center">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 border-b pb-4">Contact Information</h4>
+            <div class="space-y-6 text-sm font-bold uppercase tracking-widest">
+                <a href="https://www.instagram.com/essaysinc?igsh=MXNsZ3JtNzFoemQwbg%3D%3D&utm_source=qr" target="_blank" class="block hover:text-gray-400 transition">Instagram</a>
+                <a href="mailto:essaysinc@gmail.com" class="block hover:text-gray-400 transition">Email</a>
+                <a href="http://wa.me/6281222704770" target="_blank" class="block hover:text-gray-400 transition text-green-600">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartOverlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]" onclick="toggleCart()"></div>
+    <div id="cartDrawer" class="cart-closed fixed top-0 right-0 h-full w-full md:w-[400px] bg-white z-[101] shadow-2xl flex flex-col p-8 font-sans">
+        <div class="flex justify-between items-center border-b pb-6 mb-8">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em]">Checkout Details</h2>
+            <button onclick="toggleCart()" class="text-xl hover:opacity-50 transition">✕</button>
+        </div>
+        <div class="flex-1 overflow-y-auto hide-scrollbar space-y-8">
+            <div class="flex gap-4">
+                <img src="10.jpg" class="w-20 h-24 object-cover rounded-sm">
+                <div class="flex-1">
+                    <p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN BLACK</p>
+                    <p class="text-[10px] text-gray-400 mb-2 italic">1 x Rp. 100.000</p>
+                    <p class="text-xs font-bold">Rp. 100.000</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <img src="9.jpg" class="w-20 h-24 object-cover rounded-sm">
+                <div class="flex-1">
+                    <p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p>
+                    <p class="text-[10px] text-gray-400 mb-2 italic">1 x Rp. 125.000</p>
+                    <p class="text-xs font-bold">Rp. 125.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t pt-8 mt-auto">
+            <div class="flex justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest">Total Amount</span>
+                <span class="text-sm font-bold">Rp. 225.000</span>
+            </div>
+            <button class="w-full bg-black text-white py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gray-800 transition">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer class="p-20 text-center border-t border-gray-100 bg-white">
+        <div class="text-xs tracking-[0.5em] text-gray-400 font-bold uppercase">© 2015 ESSAYSINC.</div>
+    </footer>
+
+    <script>
+        function toggleModal() { document.getElementById('contactModal').classList.toggle('hidden'); }
+        function toggleCollection() { document.getElementById('collectionModal').classList.toggle('hidden'); }
+        function toggleAccessories() { document.getElementById('accessoriesModal').classList.toggle('hidden'); }
+        function toggleShopAll() { document.getElementById('shopAllModal').classList.toggle('hidden'); }
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('cart-closed');
+            document.getElementById('cartOverlay').classList.toggle('hidden');
+        }
+
+        window.onclick = function(event) {
+            const modals = ['contactModal', 'collectionModal', 'accessoriesModal', 'shopAllModal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target == modal) modal.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
