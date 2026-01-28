@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Clothing | Minimalist Collection</title>
+    <title>ESSAYSINC. - Official Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -35,6 +35,15 @@
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+        }
+
+        /* --- OPTIMASI MOBILE (CSS ONLY) --- */
+        @media (max-width: 768px) {
+            nav { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+            section { min-height: 70vh !important; }
+            .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+            .modal h4 { font-size: 12px !important; margin-bottom: 2rem !important; }
+            #cartDrawer { width: 85% !important; padding: 1.5rem !important; }
         }
     </style>
 </head>
@@ -80,7 +89,6 @@
         <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
             <button onclick="toggleShopAll()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
             <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6 text-center">Full Collection</h4>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 125.000</p></div>
                 <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE YELLOW</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 125.000</p></div>
@@ -90,44 +98,6 @@
                 <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN WHITE</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 100.000</p></div>
                 <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER LOGO</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 90.000</p></div>
                 <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER YI</p><p class="text-[10px] text-gray-400 mt-1 italic">Rp. 90.000</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="collectionModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
-        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
-            <button onclick="toggleCollection()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
-            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Apparel Collection</h4>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE YELLOW</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="4.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">WEARWOOD</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRIANGLE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 120.000</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accessoriesModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
-        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
-            <button onclick="toggleAccessories()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
-            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Accessories Collection</h4>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="10.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN BLACK</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER LOGO</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
-                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER YI</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="contactModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-6">
-        <div class="bg-white w-full max-w-sm p-10 rounded-sm shadow-2xl relative text-center">
-            <button onclick="toggleModal()" class="absolute top-4 right-4 text-xl hover:opacity-50 transition">✕</button>
-            <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 border-b pb-4">Contact Information</h4>
-            <div class="space-y-6 text-sm font-bold uppercase tracking-widest">
-                <a href="https://www.instagram.com/essaysinc?igsh=MXNsZ3JtNzFoemQwbg%3D%3D&utm_source=qr" target="_blank" class="block hover:text-gray-400 transition">Instagram</a>
-                <a href="mailto:essaysinc@gmail.com" class="block hover:text-gray-400 transition">Email</a>
-                <a href="http://wa.me/6281222704770" target="_blank" class="block hover:text-gray-400 transition text-green-600">WhatsApp</a>
             </div>
         </div>
     </div>
@@ -165,9 +135,58 @@
         </div>
     </div>
 
+    <div id="collectionModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
+            <button onclick="toggleCollection()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Apparel Collection</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">VINYL LINE YELLOW</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="4.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">WEARWOOD</p><p class="text-[10px] text-gray-400 mt-1">Rp. 125.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRIANGLE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 120.000</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accessoriesModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-10">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto hide-scrollbar p-8 md:p-12 rounded-sm relative shadow-2xl text-center">
+            <button onclick="toggleAccessories()" class="absolute top-6 right-6 text-2xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-sm font-bold uppercase tracking-[0.4em] mb-12 border-b pb-6">Accessories Collection</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="10.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN BLACK</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">THE FRANKLIN WHITE</p><p class="text-[10px] text-gray-400 mt-1">Rp. 100.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER LOGO</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
+                <div class="group cursor-pointer"><div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden rounded-sm"><img src="7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><p class="text-[10px] font-bold uppercase tracking-widest">ESSAYS TRUCKER YI</p><p class="text-[10px] text-gray-400 mt-1">Rp. 90.000</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-6">
+        <div class="bg-white w-full max-w-sm p-10 rounded-sm shadow-2xl relative text-center">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-xl hover:opacity-50 transition">✕</button>
+            <h4 class="text-xs font-bold uppercase tracking-[0.3em] mb-8 border-b pb-4">Contact Information</h4>
+            <div class="space-y-6 text-sm font-bold uppercase tracking-widest">
+                <a href="https://www.instagram.com/essaysinc?igsh=MXNsZ3JtNzFoemQwbg%3D%3D&utm_source=qr" target="_blank" class="block hover:text-gray-400 transition">Instagram</a>
+                <a href="mailto:essaysinc@gmail.com" class="block hover:text-gray-400 transition">Email</a>
+                <a href="http://wa.me/6281222704770" target="_blank" class="block hover:text-gray-400 transition text-green-600">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
     <footer class="p-20 text-center border-t border-gray-100 bg-white">
-        <div class="text-xs tracking-[0.5em] text-gray-400 font-bold uppercase">© 2015 ESSAYSINC.</div>
+        <div class="text-xs tracking-[0.5em] text-black-400 font-bold uppercase">COPYRIGHT © 2015 - 2026 ESSAYSINC.</div>
     </footer>
+
+    <a href="https://wa.me/6281222704770" target="_blank" 
+       class="fixed bottom-6 right-6 z-[110] bg-black text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center group"
+       title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.3 1.592 5.548 0 10.061-4.512 10.063-10.062a10.024 10.024 0 0 0-2.943-7.118 10.024 10.024 0 0 0-7.114-2.939c-5.549 0-10.062 4.513-10.065 10.063-.001 2.107.593 4.103 1.711 5.766l-.98 3.58 3.663-.962z"/>
+        </svg>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">
+            Chat With Us
+        </span>
+    </a>
 
     <script>
         function toggleModal() { document.getElementById('contactModal').classList.toggle('hidden'); }
@@ -186,6 +205,14 @@
                 if (event.target == modal) modal.classList.add('hidden');
             });
         }
+
+        // AUTO-UPDATE EMAIL TO: essaysincmmxv@gmail.com
+        document.addEventListener("DOMContentLoaded", function() {
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.href = "mailto:essaysincmmxv@gmail.com";
+            });
+        });
     </script>
 </body>
 </html>
